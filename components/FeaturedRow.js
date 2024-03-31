@@ -4,7 +4,7 @@ import { ArrowRightIcon } from 'react-native-heroicons/outline'
 import RestaurantCard from './RestaurantCard'
 import sanityClient from '../sanity'
 
-const FeaturedRow = ({key, id, title, description}) => {
+const FeaturedRow = ({id, title, description}) => {
     const [restaurants, setRestaurants] = useState([]);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const FeaturedRow = ({key, id, title, description}) => {
                 ...,
                 dishes[]->,
                 type-> {
-                    name
+                    title
                 }
             },
         }[0]
@@ -24,12 +24,12 @@ const FeaturedRow = ({key, id, title, description}) => {
         });
     }, []);
 
-    // console.log(restaurants)
+    // console.log(restaurants[0].dishes)
   return (
     <View className="h-66">
         <View className="mt-4 flex-row items-center justify-between px-4">
             <Text className="font-bold text-lg">{title}</Text>
-            <ArrowRightIcon color="#183F9C"/>
+            <ArrowRightIcon color="#183F9C" strokeWidth={2.5}/>
         </View>
         <Text className="text-xs text-gray-500 px-4">{description}</Text>
         <ScrollView
@@ -49,7 +49,7 @@ const FeaturedRow = ({key, id, title, description}) => {
                     imgUrl={restaurant.image}
                     title={restaurant.name}
                     rating={restaurant.rating}
-                    genre={restaurant.type?.name}
+                    genre={restaurant.type?.title}
                     address={restaurant.address}
                     short_description={restaurant.short_description}
                     dishes={restaurant.dishes}

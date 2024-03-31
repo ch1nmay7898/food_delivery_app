@@ -2,7 +2,7 @@ import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from 'react-na
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import {
-  UserCircleIcon,
+  UserIcon,
   ChevronDownIcon,
   MagnifyingGlassIcon,
   AdjustmentsVerticalIcon
@@ -52,10 +52,10 @@ const HomeScreen = () => {
             </Text>
             <Text className="font-bold text-xl">
               Current Location
-              <ChevronDownIcon size={20} color="#183F9C" strokeWidth={3}/>
+              <ChevronDownIcon size={20} color="#183F9C" strokeWidth={2.5}/>
             </Text>
           </View>
-          <UserCircleIcon size={35} color="#183F9C" strokeWidth={2}/>
+          <UserIcon size={35} color="#183F9C" strokeWidth={2}/>
         </View>
         {/* Search */}
         <View className="flex-row items-center space-x-2 pb-2 mx-4">
